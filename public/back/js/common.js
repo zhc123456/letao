@@ -4,10 +4,10 @@
 // NProgress.start();
 
 //结束进度条
-setTimeout(function(){
+// setTimeout(function(){
   
-  NProgress.done();
-},2000);
+//   NProgress.done();
+// },2000);
 
 $(document).ajaxStart(function(){
   NProgress.start();

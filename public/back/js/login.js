@@ -57,7 +57,7 @@ $(function(){
     e.preventDefault();
     $.ajax({
       type: "post",
-      url: "employee/emptoyeeLogin",
+      url: "/employee/employeeLogin",
       data: $("#form").serialize(),
       dataType: "json",
       success: function( info){
