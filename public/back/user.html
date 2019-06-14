@@ -94,6 +94,11 @@
 
     </table>
 
+    <!-- 3.x 的bootstrap版本 dom 结构必须使用ul -->
+
+    <div class="text-right">
+    <ul id="paginator"></ul>
+    </div>
 
   </div>
 
@@ -101,7 +106,7 @@
   <script type="text/html" id="tpl">
     {{ each rows v i }}
     <tr>
-        <td>{{ i + 1}}</td>
+        <td>{{ i + 1 + (page - 1)*size }}</td>
         <td>{{v.username}}</td>
         <td>{{v.mobile}}</td>
         <td>
@@ -124,6 +129,7 @@
   <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
   <script src="./lib/bootstrap-validator//js/bootstrapValidator.min.js"></script>
   <script src="./lib/artTemplate/template-web.js"></script>
+  <script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
   <script src="./js/user.js"></script>
   <script src="./lib/nprogress/nprogress.js"></script>
   <script src="./js/common.js"></script>
