@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,54 +12,81 @@
   <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
 
 </head>
-<body ></body>
 
-<div class="modal fade"  tabindex="-1"  aria-labelledby="myModalLabel" id="logoutModal">
-    
+<body></body>
+
+<div class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" id="logoutModal">
+
   <div class="modal-dialog modal-sm" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" ><span>&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
-        </div>
-        <div class="modal-body">
-         <p class="red"><i class="glyphicon glyphicon-info-sign"></i>您确定要退出后台管理系统吗?</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-          <button type="button" class="btn btn-primary" id="logoutBtn">退出</button>
-        </div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
+      </div>
+      <div class="modal-body">
+        <p class="red">
+          <i class="glyphicon glyphicon-info-sign"></i>您确定要退出后台管理系统吗?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" id="logoutBtn">退出</button>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="modal fade"  tabindex="-1"  aria-labelledby="myModalLabel" id="addModal">
-    
-      <div class="modal-dialog modal-sm" role="document">
-          <div class="modal-content">
-            <form action="" id="form">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" ><span>&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">添加分类</h4>
-            </div>
-            <div class="modal-body">
-                
-                    <div class="form-group">
-                      
-                      <input type="text" name="categoryName" class="form-control" id="exampleInputEmail1" placeholder="请输入一级分类">
-                    </div>
-                </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-              <button type="submit" class="btn btn-primary" >添加</button>
-            </div>
-          </div>
-        </form>
+<div class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" id="addModal">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <form action="" id="form">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            <span>&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">添加分类</h4>
         </div>
-     
-     
-     
-      </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                <span id="dropdownTxt">请选择一级分类</span>
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+
+
+
+              </ul>
+            </div>
+            <input type="hidden" name="categoryId" >
+            <input type="hidden" name="hot" value="1" >
+          </div>
+          <div class="form-group">
+            <label class="btn btn-default" for="fileupload">上传图片</label>
+            <input type="file" id="fileupload" data-url="/category/addSecondCategoryPic" name="pic1" style="display:none;">
+          </div>
+          <div class="form-group" id="imgBox">
+            <img src="./images/none.png" alt="" width="100px">
+            <input type="hidden" name="brandLogo" >
+          </div>
+          <div class="form-group">
+
+            <input type="text" name="brandName" class="form-control" id="exampleInputEmail1" placeholder="请输入二级分类">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+          <button type="submit" class="btn btn-primary">添加</button>
+        </div>
+    </div>
+    </form>
+  </div>
+
+
+
+</div>
 
 <div class="lt_aside">
   <!-- 标题 -->
@@ -74,61 +102,88 @@
   </div>
   <!-- 导航 -->
   <div class="nav">
-    <li><a href="user.html" ><i class="glyphicon glyphicon-user "><span>用户管理</span></i></a></li>
-    <li><a href="javascript:;" class="category"><i class="glyphicon glyphicon-list"><span>分类管理</span></i></a>
-    <div class="child" >
-      <a href="first.html" >一级分类</a>
-      <a href="second.html" class="current">二级分类</a>
-    </div>
+    <li>
+      <a href="user.html">
+        <i class="glyphicon glyphicon-user ">
+          <span>用户管理</span>
+        </i>
+      </a>
     </li>
-    <li><a href="product.html"><i class="glyphicon glyphicon-tags"><span>商品管理</span></i></a></li>
+    <li>
+      <a href="javascript:;" class="category">
+        <i class="glyphicon glyphicon-list">
+          <span>分类管理</span>
+        </i>
+      </a>
+      <div class="child">
+        <a href="first.html">一级分类</a>
+        <a href="second.html" class="current">二级分类</a>
+      </div>
+    </li>
+    <li>
+      <a href="product.html">
+        <i class="glyphicon glyphicon-tags">
+          <span>商品管理</span>
+        </i>
+      </a>
+    </li>
 
 
   </div>
 </div>
 
-  <div class="lt_main">
+<div class="lt_main">
 
-    <div class="lt_topbar">
-      <a class="pull-left icon_menu" href="#"><i class="glyphicon glyphicon-align-justify"></i></a>
-      <a class="pull-right icon_logout" href="#"><i class="glyphicon glyphicon-log-out"></i></a>
-      
-    </div>
+  <div class="lt_topbar">
+    <a class="pull-left icon_menu" href="#">
+      <i class="glyphicon glyphicon-align-justify"></i>
+    </a>
+    <a class="pull-right icon_logout" href="#">
+      <i class="glyphicon glyphicon-log-out"></i>
+    </a>
 
-    <div class="container-fluid mt_20">
-        <ol class="breadcrumb">
+  </div>
 
-            <li><a href="#">系统管理</a></li>
-            <li><a href="#">分类管理</a></li>
-            <li><a href="index.html" >二级分类</a></li>
-            
-          </ol>
-    </div>
-    
-    <div class="lt_content">
-      <button class="btn btn-default mb_20 addBtn">添加分类</button>
-      <table class="table table-bordered table-hover">
-        <thead>
-          <tr>
-            <th width="10%">序号</th>
-            <th width="30% ">一级分类名称</th>
-            <th width="30% ">二级分类名称</th>
-            <th width="30% ">二级分类LOGO</th>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
-      <div class="text-right">
+  <div class="container-fluid mt_20">
+    <ol class="breadcrumb">
 
-        <ul id="paginator"></ul>
-      </div>
+      <li>
+        <a href="#">系统管理</a>
+      </li>
+      <li>
+        <a href="#">分类管理</a>
+      </li>
+      <li>
+        <a href="index.html">二级分类</a>
+      </li>
 
+    </ol>
+  </div>
+
+  <div class="lt_content">
+    <button class="btn btn-default mb_20 addBtn">添加分类</button>
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th width="10%">序号</th>
+          <th width="30% ">一级分类名称</th>
+          <th width="30% ">二级分类名称</th>
+          <th width="30% ">二级分类LOGO</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    <div class="text-right">
+
+      <ul id="paginator"></ul>
     </div>
 
   </div>
 
-  <script type="text/html" id="secondTpl">
+</div>
+
+<script type="text/html" id="secondTpl">
   {{each rows v i}}
   
       <tr>
@@ -143,15 +198,26 @@
 
   </script>
 
+<script type="text/html" id="dropdownTpl">
+  {{ each rows v i}}
+    <li><a href="#" data-id="{{ v.id }}">{{v.categoryName}}</a></li>
+  {{/each}}
+  
+  
+  </script>
 
-  <script src="./lib/jquery/jquery.min.js"></script>
-  <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
-  <script src="./lib/bootstrap-validator//js/bootstrapValidator.min.js"></script>
-  <script src="./lib/nprogress/nprogress.js"></script>
-  <script src="./lib/artTemplate/template-web.js"></script>
-  <script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
-  <script src="./js/common.js"></script>
-  <script src="./js/second.js"></script>
+
+<script src="./lib/jquery/jquery.min.js"></script>
+<script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="./lib/bootstrap-validator//js/bootstrapValidator.min.js"></script>
+<script src="./lib/nprogress/nprogress.js"></script>
+<script src="./lib/artTemplate/template-web.js"></script>
+<script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+<script src="./lib/jquery-fileupload/jquery.ui.widget.js"></script>
+<script src="./lib/jquery-fileupload/jquery.fileupload.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/second.js"></script>
 
 </body>
+
 </html>
